@@ -1,0 +1,28 @@
+<div style="padding: 32px; font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+  <header style="border-bottom: 2px solid #eaeaea; padding-bottom: 16px; margin-bottom: 24px;">
+    <h1 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 28px;">🚀 Live Operational Fleet</h1>
+    <p style="margin: 0; color: #666; font-size: 14px;">Real-time enterprise core orchestration control matrix</p>
+  </header>
+
+  <!-- Live Analytical Derived Metrics Banner -->
+  <div style="background: #e3f2fd; border-left: 5px solid #2196f3; padding: 16px; border-radius: 4px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+    <span style="color: #0d47a1; font-weight: bold; font-size: 15px; display: flex; align-items: center; gap: 8px;">
+      ⚡ Total Active High-Tier Modules: 
+      <span style="font-size: 20px; font-weight: 800;">{{ activePremiumCount() }}</span>
+    </span>
+  </div>
+
+  <section>
+    <h3 style="color: #444; font-size: 16px; margin-bottom: 16px;">Core Fleet Modules</h3>
+    
+    <!-- Ultra High-Performance Compiler-Driven @for Loop -->
+    @for (module of features(); track module.id) {
+      <app-feature-card 
+        [featureData]="module" 
+        (toggleStatus)="handleStatusMutation($event)">
+      </app-feature-card>
+    } @empty {
+      <p style="color: #999; font-style: italic;">No modules deployed in this cluster framework.</p>
+    }
+  </section>
+</div>
