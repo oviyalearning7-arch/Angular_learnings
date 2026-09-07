@@ -1,0 +1,27 @@
+<div style="padding: 20px; font-family: sans-serif;">
+  <h2>🚀 Active SaaS Feature Fleet</h2>
+
+  <ul>
+    @for (item of features; track item.id) {
+      <li style="margin-bottom: 8px;">
+        <strong>{{ item.name }}</strong> — 
+
+        @if (item.tier === 'premium') {
+          <span style="color: purple;">[PREMIUM]</span>
+        } @else if (item.tier === 'enterprise') {
+          <span style="color: blue;">[ENTERPRISE]</span>
+        } @else {
+          <span style="color: gray;">[STANDARD]</span>
+        }
+
+        @if (item.active) {
+          <span style="color: green;"> ✔ Active</span>
+        } @else {
+          <span style="color: red;"> ✖ Disabled</span>
+        }
+      </li>
+    }
+  </ul>
+</div>
+
+<router-outlet />
