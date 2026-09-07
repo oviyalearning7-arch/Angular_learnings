@@ -1,0 +1,25 @@
+<div style="padding: 32px; font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+  <header style="border-bottom: 2px solid #eaeaea; padding-bottom: 16px; margin-bottom: 24px;">
+    <h1 style="margin: 0 0 8px 0; color: #1a1a1a; font-size: 28px;">🚀 Live Operational Fleet</h1>
+    <p style="margin: 0; color: #666; font-size: 14px;">Real-time enterprise core orchestration control matrix</p>
+  </header>
+
+  <!-- Conditional Evaluation Catching the Async Stream Frame -->
+  @if (featureStream(); as activeData) {
+    <section>
+      <h3 style="color: #444; font-size: 16px; margin-bottom: 16px;">Core Fleet Modules</h3>
+      
+      @for (module of activeData; track module.id) {
+        <app-feature-card [featureData]="module" (toggleStatus)="handleStatus($event)"></app-feature-card>
+      } @empty {
+        <p style="color: #999; font-style: italic;">No modules deployed in this cluster framework.</p>
+      }
+    </section>
+  } @else {
+    <!-- Graceful Network Loading UI Guard -->
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px; border: 2px dashed #ccc; border-radius: 8px; background: #fafafa;">
+      <span style="font-size: 24px; margin-bottom: 12px; animation: spin 2s linear infinite;">🔄</span>
+      <strong style="color: #666; font-size: 15px;">Establishing communication link to cloud fleet matrices...</strong>
+    </div>
+  }
+</div>
